@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Raleway, Montserrat } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
+import Providers from "./store/providers";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontRaleway = Raleway({
+  variable: "--font-raleway",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const fontMontserrat = Montserrat({
+  variable: "--font-Montserrat",
+  subsets: ["latin", "cyrillic"],
 });
 
 export const metadata: Metadata = {
@@ -25,9 +27,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${fontRaleway.variable} ${fontMontserrat.variable} antialiased`}
       >
-        {children}
+        <Providers>
+          <Header />
+          <main className="grid justify-center">{children}</main>
+        </Providers>
       </body>
     </html>
   );

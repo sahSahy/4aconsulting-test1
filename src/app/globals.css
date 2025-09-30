@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #232829;
+  --foreground: #fff;
+  --green-header: #1d5b43;
+  --bg-color: #232829;
+  --orange: #fdb056;
+
+  --font-raleway: "Raleway", sans-serif !important;
+  --font-Montserrat: "Montserrat", sans-serif !important;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+div,
+span,
+article,
+a {
+  font-family: var(--font-Montserrat) Arial, Helvetica, sans-serif;
+}
+a {
+  text-decoration: underline !important;
+}
+.discount_badge {
+  position: absolute;
+  top: -6px;
+  left: 3.1rem;
+  background-color: #fd5656;
+  padding: 8px 5px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.XL {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  p {
+    max-width: 300px;
+    margin-left: 2.5rem;
+    margin-top: 0;
+  }
+  h2 {
+    color: #fdb056;
+  }
+  h3 {
+    margin-top: 2.4rem !important;
+  }
+  div.items-end {
+    margin-top: 0.5rem;
+  }
+}
+article {
+  h3 {
+    margin-top: 4.4rem !important;
+  }
 }
